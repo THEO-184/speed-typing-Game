@@ -4,8 +4,17 @@ export enum DifficultyTypes {
 	medium = "medium",
 }
 
+export interface startGameProp {
+	start: boolean;
+	setStart: React.Dispatch<React.SetStateAction<boolean>>;
+	selectedTime: number;
+	setSelectedTime: React.Dispatch<React.SetStateAction<number>>;
+	setSelectedDifficulty: React.Dispatch<React.SetStateAction<string>>;
+	selectedDifficulty: string;
+}
+
 export interface selectionTypes {
-	value: string | DifficultyTypes;
+	value: number | DifficultyTypes;
 	text: string;
 }
 
@@ -13,19 +22,19 @@ export interface selectionTypes {
 
 export const TimeOptions: selectionTypes[] = [
 	{
-		value: "60",
+		value: 60,
 		text: "1 minute Test",
 	},
 	{
-		value: "120",
+		value: 120,
 		text: "1 minute Test",
 	},
 	{
-		value: "180",
+		value: 180,
 		text: "3 minute Test",
 	},
 	{
-		value: "300",
+		value: 300,
 		text: "5 minute Test",
 	},
 ];
