@@ -9,13 +9,18 @@ export interface startGameProp {
 	setStart: React.Dispatch<React.SetStateAction<boolean>>;
 	selectedTime: number;
 	setSelectedTime: React.Dispatch<React.SetStateAction<number>>;
-	setSelectedDifficulty: React.Dispatch<React.SetStateAction<string>>;
-	selectedDifficulty: string;
+	setSelectedDifficulty: React.Dispatch<React.SetStateAction<DifficultyTypes>>;
+	selectedDifficulty: DifficultyTypes;
+}
+
+export interface GameProp {
+	selectedTime: number;
+	selectedDifficulty: DifficultyTypes;
 }
 
 export interface selectionTypes {
 	value: number | DifficultyTypes;
-	text: string;
+	text: DifficultyTypes | string;
 }
 
 // export interface DifficultyTypes extends TimeTypes {}
@@ -42,14 +47,14 @@ export const TimeOptions: selectionTypes[] = [
 export const DifficultyOptions: selectionTypes[] = [
 	{
 		value: DifficultyTypes.easy,
-		text: "Easy",
+		text: DifficultyTypes.easy,
 	},
 	{
 		value: DifficultyTypes.medium,
-		text: "Medium",
+		text: DifficultyTypes.medium,
 	},
 	{
 		value: DifficultyTypes.hard,
-		text: "Hard",
+		text: DifficultyTypes.hard,
 	},
 ];

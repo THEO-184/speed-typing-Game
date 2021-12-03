@@ -14,20 +14,27 @@ import {
 	Select,
 } from "./StartGame.styles";
 
-const StartGame = ({
-	start,
-	setStart,
-	selectedTime,
-	setSelectedTime,
-	setSelectedDifficulty,
-	selectedDifficulty,
-}: startGameProp): JSX.Element => {
+const StartGame = (prop: startGameProp): JSX.Element => {
+	const {
+		start,
+		setStart,
+		selectedTime,
+		setSelectedTime,
+		setSelectedDifficulty,
+		selectedDifficulty,
+	} = prop;
 	const [time, setTime] = useState(TimeOptions);
 	const [difficulty, setDifficulty] = useState(DifficultyOptions);
 
 	const handleStart = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 		setStart(false);
+	};
+
+	const handleDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		const difficultyLevl: DifficultyTypes =
+			DifficultyTypes[e.target.value as keyof typeof DifficultyTypes];
+		setSelectedDifficulty(difficultyLevl);
 	};
 
 	return (
@@ -50,10 +57,7 @@ const StartGame = ({
 							</Select>
 
 							<Select>
-								<select
-									value={selectedDifficulty}
-									onChange={(e) => setSelectedDifficulty(e.target.value)}
-								>
+								<select value={selectedDifficulty} onChange={handleDifficulty}>
 									{difficulty.map((d, index): JSX.Element => {
 										return <Option key={index} {...d} />;
 									})}

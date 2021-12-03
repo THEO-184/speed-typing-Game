@@ -10,8 +10,9 @@
 }
 
 .text-container {
-	width: 70vw;
-	margin: 2rem auto;
+	max-width: 80vw;
+	min-width: 60vw;
+	margin: 1rem auto;
 	height: auto;
 	border: 1px solid black;
 	background: white;
@@ -23,12 +24,19 @@
 		font-size: 1.2rem;
 
 		.wrong {
-			// background-color: red;
-			color: #c90a0a;
+			background-color: red;
+			color: #fff;
+			font-weight: bold;
 		}
 		.correct {
 			// background-color: green;
-			color: #170ac9;
+			// color: #170ac9;
+			color: #000314;
+			font-weight: bold;
+		}
+
+		.not-typed {
+			color: #777;
 		}
 	}
 }
