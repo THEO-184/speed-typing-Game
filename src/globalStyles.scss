@@ -2,6 +2,7 @@
 	background: #a3e7fc;
 	max-height: 100%;
 	width: 100vw;
+	overflow: hidden;
 
 	& > * {
 		height: 100vh;
@@ -13,7 +14,7 @@
 	max-width: 80vw;
 	min-width: 60vw;
 	margin: 1rem auto;
-	height: auto;
+	max-height: 50vh;
 	border: 1px solid black;
 	background: white;
 	text-align: justify;

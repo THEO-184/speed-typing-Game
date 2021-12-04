@@ -15,6 +15,7 @@ export interface startGameProp {
 
 export interface GameProp {
 	selectedTime: number;
+	testText: string[];
 	selectedDifficulty: DifficultyTypes;
 }
 
@@ -32,7 +33,7 @@ export const TimeOptions: selectionTypes[] = [
 	},
 	{
 		value: 120,
-		text: "1 minute Test",
+		text: "2 minute Test",
 	},
 	{
 		value: 180,
